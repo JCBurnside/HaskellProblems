@@ -1,0 +1,45 @@
+cabal-version:      3.0
+name:               haskell-problems
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            MPL-2.0
+license-file:       LICENSE
+author:             PixelSystem
+maintainer:         jcburnside97@gmail.com
+-- copyright:
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+library haskell-problems
+    import:           warnings
+    exposed-modules: 
+        Part1
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.17.1.0
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+test-suite haskell-problems-test
+    import:           warnings
+    build-tool-depends: hspec-discover:hspec-discover
+    tests:true
+    default-language: Haskell2010
+    -- other-modules:
+    -- other-extensions:
+    type:
+        exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:
+        Spec.hs
+    other-modules:
+        OneThroughTenSpec
+    build-depends:
+        base ^>=4.17.1.0,
+        haskell-problems,
+        Hspec
